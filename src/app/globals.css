@@ -1,26 +1,286 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --brown-0: #553e32;
+    --contrast-0: #fff;
+    --cream-0: #f3d7a4;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e9eaeb;
+    --neutral-300: #d5d7da;
+    --neutral-700: #414651;
+    --neutral-600: #535862;
+    --neutral-950: #0a0d12;
+    --red: #ee1d52;
+    --red-100: #c73737;
+    --green: #079455;
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-brown-0: var(--brown-0);
+    --color-contrast-0: var(--contrast-0);
+    --color-cream-0: var(--cream-0);
+    --color-neutral-100: var(--neutral-100);
+    --color-neutral-200: var(--neutral-200);
+    --color-neutral-300: var(--neutral-300);
+    --color-neutral-600: var(--neutral-600);
+    --color-neutral-700: var(--neutral-700);
+    --color-neutral-950: var(--neutral-950);
+    --color-red: var(--red);
+    --color-red-100: var(--red-100);
+    --color-green: var(--green);
+    --font-sfpro: "SFPro", sans-serif;
+    --spacing-min10_: -0.625rem;
+    --spacing-min8_: -0.5rem;
+    --spacing-3_: 0.188rem;
+    --spacing-9_: 0.563rem;
+    --spacing-9_19_: 0.574rem;
+    --spacing-12_: 0.75rem;
+    --spacing-18_: 1.125rem;
+    --spacing-26_: 1.625rem;
+    --spacing-38_: 2.375rem;
+    --spacing-56_: 3.5rem;
+    --spacing-64_: 4rem;
+    --spacing-68_: 4.25rem;
+    --spacing-74_: 4.625rem;
+    --spacing-77_: 4.813rem;
+    --spacing-80_: 5rem;
+    --spacing-84_: 5.25rem;
+    --spacing-93_: 5.813rem;
+    --spacing-96_: 6rem;
+    --spacing-101_: 6.313rem;
+    --spacing-104_: 6.5rem;
+    --spacing-120_: 7.5rem;
+    --spacing-122_: 7.625rem;
+    --spacing-132_: 8.25rem;
+    --spacing-137_: 8.563rem;
+    --spacing-144_: 9rem;
+    --spacing-150_: 9.375rem;
+    --spacing-157_: 9.813rem;
+    --spacing-160_: 10rem;
+    --spacing-167_: 10.438rem;
+    --spacing-168_: 10.5rem;
+    --spacing-169_: 10.563rem;
+    --spacing-180_: 11.25rem;
+    --spacing-182_: 11.375rem;
+    --spacing-183_: 11.438rem;
+    --spacing-185_: 11.563rem;
+    --spacing-216_: 13.5rem;
+    --spacing-220_: 13.75rem;
+    --spacing-227_: 14.188rem;
+    --spacing-236_: 14.75rem;
+    --spacing-240_: 15rem;
+    --spacing-254_: 15.875rem;
+    --spacing-261_: 16.313rem;
+    --spacing-262_: 16.375rem;
+    --spacing-266_: 16.625rem;
+    --spacing-298_: 18.625rem;
+    --spacing-300_: 18.75rem;
+    --spacing-305_: 19.063rem;
+    --spacing-312_: 19.5rem;
+    --spacing-336_: 21rem;
+    --spacing-340_: 21.25rem;
+    --spacing-352_: 22rem;
+    --spacing-373_: 23.313rem;
+    --spacing-376_: 23.5rem;
+    --spacing-380_: 23.75rem;
+    --spacing-389_: 24.313rem;
+    --spacing-402_: 25.125rem;
+    --spacing-404_: 25.25rem;
+    --spacing-451_: 28.188rem;
+    --spacing-457_: 28.563rem;
+    --spacing-623_: 38.938rem;
+    --spacing-760_: 47.5rem;
+    --text-10_: 0.625rem;
+    --text-28_: 1.75rem;
+    --text-32_: 2rem;
+    --text-56_: 3.5rem;
+    --shadow-25: 0px 0px 20px 0px #cbcaca40;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    /*--radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);*/
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+    @font-face {
+        font-family: "SFPro";
+        src: url("/fonts/sfpro.woff2") format("woff2");
+    }
+
+    body {
+        @apply bg-neutral-100 font-sfpro text-neutral-950;
+    }
+
+    main.site {
+        @apply flex px-6 py-22 md:px-56_ md:py-132_ lg:px-120_;
+    }
+
+    input {
+        @apply !text-sm md:text-lg;
+    }
+
+    button {
+        @apply cursor-pointer;
+    }
+
+    .toaster button {
+        @apply !bg-transparent;
+    }
+}
+
+@layer components {
+    .hide-seller-sidebar {
+        @apply translate-x-[-13.5rem] md:translate-x-0;
+    }
+
+    .hide-filter {
+        @apply translate-x-[-18.625rem] md:translate-x-0;
+    }
+
+    .line {
+        @apply border-b border-neutral-300;
+    }
+
+    .line-vertical {
+        @apply h-64_ border-r border-neutral-300;
+    }
+
+    .line-horizontal {
+        @apply w-full !h-0 border-b border-neutral-300;
+    }
+
+    .product-description ul {
+        @apply mt-3 pl-5 list-disc;
+    }
+
+    .product-list th {
+        @apply p-2 border-b border-neutral-200 text-left;
+    }
+
+    .product-list td {
+        @apply p-2 border-b border-neutral-200 text-sm;
+    }
+
+    .store-header {
+        @apply w-full md:left-[13.5rem] md:w-[calc(100%-13.5rem)];
+    }
+
+    .store-header-full {
+        @apply w-full left-0;
+    }
+
+    .store-content {
+        @apply w-full duration-500 md:ml-[13.5rem] md:w-[calc(100%-13.5rem)];
+    }
+
+    .store-content-full {
+        @apply w-full ml-0;
+    }
+
+    .toaster-success {
+        @apply !bg-green h-10 px-3 py-2 rounded-lg;
+    }
+
+    .toaster-failed {
+        @apply !bg-red h-10 px-3 py-2 rounded-lg;
+    }
+
+    .hide-seller-account {
+        @apply invisible opacity-0;
+    }
+}
+
+@layer utilities {
+    .order-tab-nav {
+        background: none !important;
+        border-bottom: var(--spacing-3_) solid var(--color-neutral-300);
+        border-radius: 0;
+        box-shadow: none !important;
+        color: var(--color-neutral-950);
+        height: 3rem;
+        font-size: 0.875rem;
+    }
+
+    .order-tab-nav[data-state="active"] {
+        border-bottom: var(--spacing-3_) solid var(--color-neutral-950);
+        font-weight: 600;
+    }
+
+    .store-sidebar-menu {
+        height: calc(100% - 2rem - 4rem - 3rem);
+        overflow-y: auto;
+    }
 }
